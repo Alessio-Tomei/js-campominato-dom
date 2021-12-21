@@ -1,0 +1,75 @@
+/* Start header */
+
+header .row {
+    min-height: 100px;
+}
+
+header .ms_container-logo img {
+    width: 60px;
+}
+
+header .ms_container-logo h1 {
+    display: inline;
+    vertical-align: middle;
+}
+
+header .ms_container-start-game #difficulty-selector {
+    width: 200px;
+    background-color: #e9e9ed;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+header .ms_container-start-game #play-button {
+    background-color: #e9e9ed;
+    border-radius: 5px;
+    padding: 3px 20px;
+    border-width: 1px;
+}
+
+/* End header */
+
+/* Start main*/
+
+main {
+    background-color: aquamarine;
+    padding: 100px 0px;
+}
+
+main .ms_box {
+    border: 1px solid black;
+    position: relative;
+}
+
+main .ms_box-easy {
+    width: 10%;
+    padding-top: 10%;
+}
+
+main .ms_box-medium {
+    width: calc(100% / 9);
+    padding-top: calc(100% / 9);
+}
+
+main .ms_box-hard {
+    width: calc(100% / 7);
+    padding-top: calc(100% / 7);
+}
+
+main .ms_box .ms_box-number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+
+main .ms_box-active {
+    background-color: cornflowerblue;
+    color: white;
+}
+
+main .ms_box-show-bomb {
+    background-color: red;
+}
+
+/* End main */
