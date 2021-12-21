@@ -37,17 +37,17 @@ function isNotIn (number, list) {
 }
 
 function generateBombs(difficulty) {
-    let num;
+    let number;
     if (difficulty == 'easy') {
-         num = 100;
+        number = 100;
     }else if (difficulty == 'medium') {
-         num = 81;
+        number = 81;
     }else {
-         num = 49;
+        number = 49;
     }
     const bombsList = [];
     while (bombsList.length < 16) {
-        const randomInt = Math.floor(Math.random()*num + 1);
+        const randomInt = Math.floor(Math.random()* number + 1);
         if (isNotIn(randomInt, bombsList)) {
             bombsList.push(randomInt);
         }
@@ -67,9 +67,8 @@ function showBombs(bombsList) {
 
 function stopGame() {
     let boxs = document.querySelectorAll('main #container-game .ms_box')
-    console.log(boxs);
     // for (let i = 0; i < boxs.length; i++) {
-    //     element.removeEventListener(event, function)    
+    //     element.removeEventListener(event, function())    
     // }
 }
 
