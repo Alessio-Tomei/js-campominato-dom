@@ -25,6 +25,7 @@ function createGame(difficulty) {
     }else {
         createCells(49, 'hard');
     }
+    gameEnded = false;
 }
 
 function isNotIn (number, list) {
@@ -66,17 +67,19 @@ function showBombs(bombsList) {
 }
 
 function stopGame() {
-    let boxs = document.querySelectorAll('main #container-game .ms_box')
-    // for (let i = 0; i < boxs.length; i++) {
-    //     element.removeEventListener(event, function())    
-    // }
+    gameEnded = true; 
 }
 
 function selectBox(bombsList) {
     let boxs = document.querySelectorAll('main #container-game .ms_box');
     let succes = 0;
     for (let i = 0; i < boxs.length; i++) {
-        boxs[i].addEventListener('click', function() {
+        boxs[i].addEventListener('click', function () {
+
+            if( gameEnded ) {
+                return; 
+            }    
+
             const boxIndex = this.querySelector('.ms_box-number').textContent;
             if (isNotIn(boxIndex, bombsList)) {
                 if (!this.classList.contains('ms_box-active')) {
@@ -99,9 +102,10 @@ function selectBox(bombsList) {
 
 const difficultySelector = document.getElementById('difficulty-selector');
 const playButton = document.getElementById('play-button');
+let gameEnded = false; 
 
 playButton.addEventListener('click', function() {
     createGame(difficultySelector.value);
     const bombsList = generateBombs(difficultySelector.value);
-    selectBox(bombsList)  
+    selectBox(bombsList);  
 });
